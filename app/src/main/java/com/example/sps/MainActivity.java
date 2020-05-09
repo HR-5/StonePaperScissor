@@ -184,6 +184,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Enter Valid Data", Toast.LENGTH_SHORT).show();
             } else {
                 setContentView(R.layout.single);
+                player = 1;
+                sc1 = 0;
+                sc2 = 0;
+                round = 1;
                 TextView s1 = (TextView) findViewById(R.id.s1);
                 TextView s2 = (TextView) findViewById(R.id.s2);
                 ch = (TextView) findViewById(R.id.chance);
