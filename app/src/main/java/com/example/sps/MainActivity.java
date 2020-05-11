@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -124,6 +125,20 @@ public class MainActivity extends AppCompatActivity {
         img.setVisibility(View.INVISIBLE);
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (flag == 0) {
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
+                moveTaskToBack(true);
+                return true;
+            }
+            return super.onKeyDown(keyCode, event);
+        }
+        else {
+            home(null);
+        }
+        return true;
+    }
     public void single(View view) {
         flag = 1;
         Button si = (Button) findViewById(R.id.single);
